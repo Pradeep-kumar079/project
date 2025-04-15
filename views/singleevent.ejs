@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= event.title %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="event-detail-container">
+    <% if (event.image.endsWith('.mp4')) { %>
+      <video controls src="/upload/<%= event.image %>"></video>
+    <% } else { %>
+      <img src="/upload/<%= event.image %>" alt="">
+    <% } %>
+    <h1><%= event.title %></h1>
+    <p><strong>Date:</strong> <%= new Date(event.date).toDateString() %></p>
+    <p><%= event.description %></p>
+    <a href="/" class="event-btn">Back to Gallery</a>
+  </div>
+</body>
+</html>
